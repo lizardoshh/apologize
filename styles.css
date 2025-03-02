@@ -1,0 +1,229 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f4ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://i.imgur.com/DMBcMI3.png'); /* Background dengan ornamen cinta */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Warna putih dengan transparansi 70% */
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.apology-card h1 {
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.apology-card p {
+    color: #6c5ce7;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.yes-button, .no-button {
+    background-color: #ff6b6b;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.yes-button:hover {
+    background-color: #ff4d4d;
+    transform: scale(1.05);
+}
+
+.no-button {
+    background-color: #6c5ce7;
+}
+
+.no-button:hover {
+    background-color: #5a45f7;
+    transform: scale(1.05);
+}
+
+/* Ornamen cinta di sudut */
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff6b6b;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -25px;
+    left: 0;
+}
+
+.heart::after {
+    left: 25px;
+    top: 0;
+}
+
+.heart1 {
+    top: 20px;
+    right: 20px;
+}
+
+.heart2 {
+    bottom: 20px;
+    left: 20px;
+}
+
+.heart3 {
+    top: 20px;
+    left: 20px;
+}
+
+.heart4 {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: #ff6b6b;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #6c5ce7;
+    line-height: 1.6;
+}
+
+/* Colorful Popup */
+.colorful-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 3; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.2em;
+    color: #fff;
+    animation: colorfulAnimation 2s infinite;
+}
+
+@keyframes colorfulAnimation {
+    0% { background-color: #ff6b6b; }
+    25% { background-color: #6c5ce7; }
+    50% { background-color: #ffcc5c; }
+    75% { background-color: #81ecec; }
+    100% { background-color: #ff6b6b; }
+}
+
+/* Running Text */
+.running-text {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: pink; 
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+.running-text marquee {
+    color: #ff6b6b;
+    font-size: 5em;
+}
+
+/* Rain Effect */
+.rain {
+    position: absolute;
+    top: -10px;
+    width: 1px;
+    height: 10px;
+    background-color: #6c5ce7;
+    animation: fall linear infinite;
+    z-index: 0;
+}
+
+@keyframes fall {
+    0% { top: -10px; opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { top: 100vh; opacity: 0; }
+}
