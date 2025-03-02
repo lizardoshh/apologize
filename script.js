@@ -5,23 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('myModal');
     const closeButton = document.querySelector('.close-button');
     const colorfulPopup = document.getElementById('colorfulPopup');
-
-    // Create raindrops
-    function createRaindrops() {
-        for (let i = 0; i < 100; i++) {
-            const raindrop = document.createElement('div');
-            raindrop.classList.add('rain');
-            raindrop.style.left = `${Math.random() * 100}vw`;
-            raindrop.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            raindrop.style.opacity = `${Math.random()}`;
-            document.body.appendChild(raindrop);
-        }
-    }
-
-    createRaindrops();
+    const chatReminderPopup = document.getElementById('chatReminderPopup');
 
     yesButton.addEventListener('click', function() {
         modal.style.display = 'block';
+        chatReminderPopup.style.display = 'block';
+        setTimeout(function() {
+            chatReminderPopup.style.display = 'none';
+        }, 5000); // Pop-up akan hilang setelah 5 detik
     });
 
     closeButton.addEventListener('click', function() {
