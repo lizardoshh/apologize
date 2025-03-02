@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeButton = document.querySelector('.close-button');
     const colorfulPopup = document.getElementById('colorfulPopup');
 
-  
+      yesButton.addEventListener('click', function() {
+        modal.style.display = 'block';
+    });
 
     closeButton.addEventListener('click', function() {
         modal.style.display = 'none';
