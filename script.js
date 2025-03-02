@@ -5,15 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('myModal');
     const closeButton = document.querySelector('.close-button');
     const colorfulPopup = document.getElementById('colorfulPopup');
-    const chatReminderPopup = document.getElementById('chatReminderPopup');
 
-    yesButton.addEventListener('click', function() {
-        modal.style.display = 'block';
-        chatReminderPopup.style.display = 'block';
-        setTimeout(function() {
-            chatReminderPopup.style.display = 'none';
-        }, 5000); // Pop-up akan hilang setelah 5 detik
-    });
+  
 
     closeButton.addEventListener('click', function() {
         modal.style.display = 'none';

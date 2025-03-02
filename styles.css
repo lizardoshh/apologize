@@ -7,21 +7,23 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('https://i.imgur.com/5O3XZQz.png'); /* Background dengan ornamen cinta */
+    background-image: url('https://i.imgur.com/DMBcMI3.png'); /* Background dengan ornamen cinta */
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    position: relative;
 }
 
 .container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Transparan */
+    background-color: rgba(255, 255, 255, 0.7); /* Warna putih dengan transparansi 70% */
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
     position: relative;
+    z-index: 1;
 }
 
 .apology-card h1 {
@@ -122,7 +124,7 @@ body {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 2; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -170,7 +172,7 @@ body {
 .colorful-popup {
     display: none; /* Hidden by default */
     position: fixed;
-    z-index: 2; /* Sit on top */
+    z-index: 3; /* Sit on top */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -192,64 +194,36 @@ body {
     100% { background-color: #ff6b6b; }
 }
 
+/* Running Text */
+.running-text {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: pink; 
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+.running-text marquee {
+    color: #ff6b6b;
+    font-size: 5em;
+}
+
 /* Rain Effect */
 .rain {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: -1;
+    top: -10px;
+    width: 1px;
+    height: 10px;
+    background-color: #6c5ce7;
+    animation: fall linear infinite;
+    z-index: 0;
 }
 
-.rain::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        transparent,
-        transparent 29px,
-        rgba(174, 194, 224, 0.1) 30px,
-        rgba(174, 194, 224, 0.1) 39px
-    );
-    background-size: 100% 100px;
-    animation: animateRain 1s linear infinite;
-}
-
-@keyframes animateRain {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0 -100px;
-    }
-}
-
-/* Chat Reminder Popup */
-.chat-reminder-popup {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 3; /* Sit on top */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    font-size: 1.2em;
-    color: #ff6b6b;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+@keyframes fall {
+    0% { top: -10px; opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { top: 100vh; opacity: 0; }
 }
